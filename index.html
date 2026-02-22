@@ -2,32 +2,214 @@
 <html>
 <head>
   <title>KishX</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    :root {
+      --bg: #f5f5f5;
+      --card: #ffffff;
+      --text: #111;
+      --muted: #555;
+      --border: #e7e7e7;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 80px 20px;
-      background-color: #f5f5f5;
-    }
-    h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 20px;
-      color: #555;
-      max-width: 800px;
-      margin: 0 auto;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 70px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 52px;
+      margin: 0 0 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .span-6 { grid-column: span 6; }
+    .span-12 { grid-column: span 12; }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    li { margin: 6px 0; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .step {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      background: #fafafa;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .contact span {
+      color: var(--text);
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 60px;
+      color: #777;
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      h1 { font-size: 42px; }
+      .span-6 { grid-column: span 12; }
+      .steps { grid-template-columns: 1fr; }
     }
   </style>
 </head>
+
 <body>
-  <h1>KishX</h1>
-  <p>
-    We provide AI receptionist services that answer incoming calls, respond to customer questions, and book appointments automatically. Our system integrates with existing business software to help companies reduce missed calls, increase bookings, and operate more efficiently.
-  </p>
+  <div class="container">
+    <header>
+      <h1>KishX</h1>
+      <p class="subtitle">
+        We provide AI receptionist services that answer incoming calls, respond to customer questions, and book appointments automatically.
+        Our system integrates with existing business software to help companies reduce missed calls, increase bookings, and operate more efficiently.
+      </p>
+    </header>
+
+    <section class="grid">
+      <div class="card span-6">
+        <h2>What it does</h2>
+        <ul>
+          <li>Answers calls 24/7 and handles common questions</li>
+          <li>Books appointments and captures lead info</li>
+          <li>Sends confirmations by text/email (optional)</li>
+          <li>Transfers to a human when needed</li>
+        </ul>
+      </div>
+
+      <div class="card span-6">
+        <h2>Why it matters</h2>
+        <ul>
+          <li>Stops missed calls from turning into lost revenue</li>
+          <li>Frees up staff to focus on customers in front of them</li>
+          <li>Improves response time and customer experience</li>
+          <li>Consistent, professional call handling</li>
+        </ul>
+      </div>
+
+      <div class="card span-12">
+        <h2>How it works</h2>
+        <p>Most businesses start with missed-call coverage, then upgrade to full call handling once they’re confident.</p>
+        <div class="steps">
+          <div class="step">
+            <strong>1) Connect</strong>
+            We connect the AI receptionist to your phone line (forwarding or full routing).
+          </div>
+          <div class="step">
+            <strong>2) Integrate</strong>
+            We connect your calendar/scheduling system so bookings happen automatically.
+          </div>
+          <div class="step">
+            <strong>3) Launch</strong>
+            We test, refine the call flow, and go live with ongoing support.
+          </div>
+        </div>
+      </div>
+
+      <div class="card span-6">
+        <h2>Great for</h2>
+        <ul>
+          <li>Salons & barbershops</li>
+          <li>Med spas & clinics</li>
+          <li>Home services (HVAC, plumbing, etc.)</li>
+          <li>Gyms & training facilities</li>
+        </ul>
+      </div>
+
+      <div class="card span-6">
+        <h2>Common integrations</h2>
+        <ul>
+          <li>Google Calendar / Outlook</li>
+          <li>Calendly / Cal.com</li>
+          <li>Existing booking tools (via sync/automation)</li>
+          <li>SMS + email confirmations</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="contact">
+      To book a demo, email <span>kishxllc@gmail.com</span>
+    </div>
+  </div>
+
+  <footer>
+    © <span id="year"></span> KishX. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
